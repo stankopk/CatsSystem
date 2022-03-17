@@ -31,15 +31,16 @@ namespace CatsSystem.View
         {
             this.components = new System.ComponentModel.Container();
             this.dgvCats = new System.Windows.Forms.DataGridView();
-            this.catBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.catBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblName = new System.Windows.Forms.Label();
             this.lblAge = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtAge = new System.Windows.Forms.TextBox();
             this.btnCreate = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCats)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.catBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -57,10 +58,6 @@ namespace CatsSystem.View
             this.dgvCats.Name = "dgvCats";
             this.dgvCats.Size = new System.Drawing.Size(279, 195);
             this.dgvCats.TabIndex = 0;
-            // 
-            // catBindingSource
-            // 
-            this.catBindingSource.DataSource = typeof(CatsSystem.Model.Cat);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -80,6 +77,10 @@ namespace CatsSystem.View
             this.ageDataGridViewTextBoxColumn.DataPropertyName = "Age";
             this.ageDataGridViewTextBoxColumn.HeaderText = "Age";
             this.ageDataGridViewTextBoxColumn.Name = "ageDataGridViewTextBoxColumn";
+            // 
+            // catBindingSource
+            // 
+            this.catBindingSource.DataSource = typeof(CatsSystem.Model.Cat);
             // 
             // lblName
             // 
@@ -128,6 +129,17 @@ namespace CatsSystem.View
             this.btnCreate.UseVisualStyleBackColor = true;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(610, 113);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(178, 82);
+            this.btnUpdate.TabIndex = 6;
+            this.btnUpdate.Text = "Update Cat";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -135,6 +147,7 @@ namespace CatsSystem.View
             this.BackgroundImage = global::CatsSystem.Properties.Resources.Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.txtAge);
             this.Controls.Add(this.txtName);
@@ -163,5 +176,6 @@ namespace CatsSystem.View
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtAge;
         private System.Windows.Forms.Button btnCreate;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }
