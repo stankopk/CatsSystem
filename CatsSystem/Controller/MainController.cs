@@ -17,5 +17,16 @@ namespace CatsSystem.Controller
                 return db.Cats.ToList();
             }
         }
+
+        //CREATE - TEAM LEADER
+        public void AddCat(Cat cat)
+        {
+            using (CatsDBEntities db = new CatsDBEntities())
+            {
+                cat.Id = db.Cats.ToList().LastOrDefault().Id + 1;
+                db.Cats.Add(cat);
+                db.SaveChanges();
+            }
+        }
     }
 }
