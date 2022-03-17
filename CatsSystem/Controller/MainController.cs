@@ -28,5 +28,21 @@ namespace CatsSystem.Controller
                 db.SaveChanges();
             }
         }
+
+        //UPDATE - DEV 1
+        public void UpdateCat(int id, Cat cat)
+        {
+            using (CatsDBEntities db = new CatsDBEntities())
+            {
+                var catToUpdate = db.Cats.Where(c => c.Id == id).FirstOrDefault();
+                if(catToUpdate != null)
+                {
+                    catToUpdate.Id = id;
+                    catToUpdate.Name = cat.Name;
+                    catToUpdate.Age = cat.Age;
+                    db.SaveChanges();
+                }
+            }
+        }
     }
 }

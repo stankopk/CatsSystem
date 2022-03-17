@@ -39,5 +39,16 @@ namespace CatsSystem.View
             mainController.AddCat(cat);
             RefreshTable();
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = dgvCats.CurrentRow;
+            int id = int.Parse(row.Cells[0].Value.ToString());
+            Cat cat = new Cat();
+            cat.Name = txtName.Text;
+            cat.Age = int.Parse(txtAge.Text);
+            mainController.UpdateCat(id, cat);
+            RefreshTable();
+        }
     }
 }
