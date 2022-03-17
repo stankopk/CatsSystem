@@ -58,5 +58,13 @@ namespace CatsSystem.Controller
                 }
             }
         }
+
+        public List<Cat> ShowCatsOlderThan5Years()
+        {
+            using (CatsDBEntities db = new CatsDBEntities())
+            {
+                return db.Cats.Where(cat => cat.Age > 5).ToList();
+            }
+        }
     }
 }
