@@ -44,5 +44,19 @@ namespace CatsSystem.Controller
                 }
             }
         }
+
+        //DELETE - DEV 2
+        public void DeleteCat(int id)
+        {
+            using (CatsDBEntities db = new CatsDBEntities())
+            {
+                var catToDelete = db.Cats.Where(c => c.Id == id).FirstOrDefault();
+                if (catToDelete != null)
+                {
+                    db.Cats.Remove(catToDelete);
+                    db.SaveChanges();
+                }
+            }
+        }
     }
 }

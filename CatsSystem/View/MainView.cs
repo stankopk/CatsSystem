@@ -50,5 +50,13 @@ namespace CatsSystem.View
             mainController.UpdateCat(id, cat);
             RefreshTable();
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = dgvCats.CurrentRow;
+            int id = int.Parse(row.Cells[0].Value.ToString());
+            mainController.DeleteCat(id);
+            RefreshTable();
+        }
     }
 }
