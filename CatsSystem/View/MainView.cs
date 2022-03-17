@@ -58,5 +58,15 @@ namespace CatsSystem.View
             mainController.DeleteCat(id);
             RefreshTable();
         }
+
+        private void btnShowCatsOlderThan5Years_Click(object sender, EventArgs e)
+        {
+            dgvCats.DataSource = mainController.ShowCatsOlderThan5Years();
+        }
+
+        private void btnShowAllCats_Click(object sender, EventArgs e)
+        {
+            RefreshTable();
+        }
     }
 }
